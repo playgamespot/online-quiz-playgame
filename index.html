@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Bonus Play Quiz</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+      <!-- FAVICON -->
+      <link rel="icon" type="image/png" href="https://i.imgur.com/f1lrrXV.png">
+    
+    <style>
+        body {  
+            font-family: 'Lato', Arial, sans-serif;  
+            background: #f2f2f2;  
+            margin: 0;
+            padding: 0;
+        }
+        .container {  
+            max-width: 420px;  
+            margin: 50px auto;  
+            background: #fff;  
+            padding: 25px;  
+            border-radius: 12px;  
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+            text-align: center;
+        }
+        h1 { 
+            font-size: 20px; 
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #333;
+        }
+        button.btn-quiz {  
+            width: 100%;  
+            padding: 15px;  
+            margin-top: 10px;  
+            border: none;  
+            border-radius: 8px;  
+            font-size: 15px;  
+            cursor: pointer; 
+            background: #007bff; 
+            color: #fff; 
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+        button.btn-quiz:hover {
+            background: #0056b3;
+        }
+        .hidden { 
+            display: none; 
+        }
+        .progress {  
+            height: 8px;  
+            background: #ddd;  
+            border-radius: 5px;  
+            overflow: hidden;  
+            margin-bottom: 25px;
+        }
+        .bar {  
+            height: 100%;  
+            width: 0%;  
+            background: #28a745;  
+            transition: width 0.4s ease;
+        }
+        .cta {  
+            display: block;  
+            background: #28a745;  
+            color: #fff;  
+            padding: 15px;  
+            margin-top: 20px;  
+            text-decoration: none;  
+            border-radius: 8px;  
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+        .cta:hover {
+            background: #218838;
+        }
+        .small {  
+            font-size: 12px;  
+            color: #777;  
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="progress">
+        <div class="bar" id="bar"></div>
+    </div>
+    
+    <div id="step1">    
+        <h1>Do you play Online Casino regularly?</h1>    
+        <button class="btn-quiz" onclick="next(1)">Yes, daily</button>    
+        <button class="btn-quiz" onclick="next(1)">Sometimes</button>  
+    </div>
+    
+    <div id="step2" class="hidden">    
+        <h1>Do you usually run out of coins fast?</h1>    
+        <button class="btn-quiz" onclick="next(2)">Yes 😅</button>    
+        <button class="btn-quiz" onclick="next(2)">Sometimes</button>  
+    </div>
+    
+    <div id="step3" class="hidden">    
+        <h1>Checking your play style…</h1>    
+        <p>We’re matching you with available bonus options.</p>  
+    </div>
+    
+    <div id="result" class="hidden">    
+        <h1>Your Result 👇</h1>    
+        <p>Based on your answers, you may benefit from partner bonus offers that help extend gameplay in Online Casino.</p>
+        <p>These are optional promotions (not guaranteed rewards), but some players use them to get small coin boosts.</p>
+        
+        <a href="https://magadownloads.com/1328137" class="cta">See Available Offers</a>
+        
+        <p class="small">Availability varies by region and user. Not affiliated with other Casino.</p>  
+    </div>
+</div>
+
+<script>
+    function next(step){  
+        document.getElementById("bar").style.width = (step + 1) * 33 + "%";
+
+        if(step === 1){    
+            document.getElementById("step1").classList.add("hidden");    
+            document.getElementById("step2").classList.remove("hidden");  
+        }
+
+        if(step === 2){    
+            document.getElementById("step2").classList.add("hidden");    
+            document.getElementById("step3").classList.remove("hidden");
+
+            setTimeout(function(){      
+                document.getElementById("step3").classList.add("hidden");      
+                document.getElementById("result").classList.remove("hidden");    
+            }, 1200);  
+        }
+    }
+</script>
+
+</body>
+</html>
